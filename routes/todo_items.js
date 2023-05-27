@@ -2,9 +2,9 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/',(request, response) => {
-    response.send('list of all to-do items')
-})
+const {getAllToDoItems} = require('../contollers/todo_items')
+
+router.route('/').get(getAllToDoItems)
 
 
 module.exports = router
